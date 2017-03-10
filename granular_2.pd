@@ -1,0 +1,25 @@
+#N canvas 794 448 450 300 10;
+#X obj 28 23 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 28 54 \; pd dsp \$1;
+#X obj 139 25 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 139 53 openpanel;
+#X msg 139 84 read \$1;
+#X obj 139 113 soundfiler;
+#X floatatom 174 159 10 0 0 0 - - -;
+#X msg 174 186 s sampleSize;
+#X obj 139 221 expr 44100 / $f1;
+#X text 255 218 sample rate / total size;
+#X text 210 124 Gives total size of soundfile in samples;
+#X text 241 244 Gives the rate at which to read the array;
+#X obj 141 263 phasor~;
+#X floatatom 197 257 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 8 0 13 0;

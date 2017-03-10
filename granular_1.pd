@@ -1,0 +1,43 @@
+#N canvas 108 81 643 641 10;
+#X msg 367 93 0;
+#X msg 407 92 3;
+#X obj 304 132 tabwrite gitt;
+#X text 380 61 index;
+#X floatatom 292 82 5 0 0 0 - - -;
+#X text 291 51 value;
+#X obj 307 184 table gitt;
+#X obj 53 265 tabwrite gitt_2;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array gitt_2 100 float 1;
+#A 0 0.2 0.5 -0.3 0.6 0 0.2 0.5 -0.3 0.6 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 35 25 graph;
+#X msg 127 216 0;
+#X msg 167 215 3;
+#X text 140 184 index;
+#X floatatom 52 205 5 0 0 0 - - -;
+#X text 51 174 value;
+#X text 187 340 first value = starting index;
+#X text 187 369 following values = values of the following indexes
+;
+#X obj 57 395 tabread gitt_2;
+#X text 66 373 index;
+#X text 61 418 value at the index;
+#X floatatom 55 360 5 0 5 0 - - -;
+#X floatatom 52 441 5 0 0 0 - - -;
+#X msg 191 407 \; gitt_2 0 0.2 0.5 -0.3 0.6;
+#X obj 143 477 makenote 64 1000;
+#X obj 143 507 noteout 1;
+#X connect 0 0 2 1;
+#X connect 1 0 2 1;
+#X connect 4 0 2 0;
+#X connect 9 0 7 1;
+#X connect 10 0 7 1;
+#X connect 12 0 7 0;
+#X connect 16 0 20 0;
+#X connect 19 0 16 0;
+#X connect 22 0 23 0;
+#X connect 22 1 23 1;
